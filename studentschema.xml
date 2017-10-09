@@ -1,0 +1,31 @@
+<ts:schema xmlns:ts="http://www.w3.org/2001/XMLSchema 
+
+" elementFormDefault="qualified">
+	<ts:element name="学生名册">
+		<ts:complexType>
+			<ts:sequence>
+				<ts:element ref="学生" maxOccurs="unbounded"/>
+			</ts:sequence>
+		</ts:complexType>
+	</ts:element>
+	<ts:element name="学生">
+		<ts:complexType>
+			<ts:sequence>
+				<ts:element ref="姓名"/>
+				<ts:element ref="性别"/>
+				<ts:element ref="年龄"/>
+			</ts:sequence>
+			<ts:attribute name="学号" type="ts:int" use="required"/>
+		</ts:complexType>
+	</ts:element>
+	<ts:element name="姓名" type="ts:string"/>
+	<ts:element name="性别">
+		<ts:simpleType>
+			<ts:restriction base="ts:string">
+				<ts:enumeration value="男"/>
+				<ts:enumeration value="女"/>
+			</ts:restriction>
+		</ts:simpleType>
+	</ts:element>
+	<ts:element name="年龄" type="ts:int"/>
+</ts:schema>
